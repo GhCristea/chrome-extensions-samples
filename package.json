@@ -4,10 +4,11 @@
   "private": true,
   "description": "Official samples for Chrome Extensions and the Chrome Apps platform.",
   "scripts": {
-    "prettier": "npx prettier **/*.{md,html,json} -w",
+    "prettier": "pnpm prettier **/*.{md,html,json} -w",
     "lint": "eslint **/*.js",
-    "lint:fix": "npm run lint -- --fix",
-    "prepare": "husky install"
+    "lint:fix": "pnpm run lint -- --fix",
+    "prepare": "husky",
+    "clean:modules": "./clean_modules.sh"
   },
   "repository": {
     "type": "git",
@@ -34,10 +35,10 @@
   },
   "lint-staged": {
     "**/*.js": [
-      "npx eslint --fix"
+      "pnpm eslint --fix"
     ],
     "**/*.{md,html,json}": [
-      "npx prettier --write"
+      "pnpm prettier --write"
     ]
   }
 }
